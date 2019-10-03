@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  background-color: #ddd;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  padding: 25px;
+}
+
+h3 {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Open Sans';
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+section {
+  background-color: #ddd;
+}
+
+nav {
+  background-color: #087d8e;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+nav ul {
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  line-height: 50px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'open sans', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0 18px;
+}
+
+.hero {
+  background: url(https://www.projectshift.io/wp-content/uploads/2017/12/TIS4202Panorama_hdr_tonemapped2013IceFactoryATC-Scott_Faber_Photography.jpg) no-repeat center fixed;
+  background-size: cover;
+  height: 700px;
+}
+
+.hero-title {
+  padding-top: 300px;
+  color: #fff;
+  font-family: 'Kadwa', serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.column {
+  float: left;
+  width: 33.333%;
+}
+
+.big-column {
+  float: left;
+  width: 79%;
+}
+
+.small-col {
+  width: 21%;
+}
+.special {
+  padding: 50px;
+}
+
+.food img {
+  width: 100%;
+}
+.row {
+  clear: both;
+}
+
+.column-inner {
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  .column {
+    width: 100%;
+  }
+}

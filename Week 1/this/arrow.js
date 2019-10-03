@@ -1,0 +1,1 @@
+const arrowFunc = (num) => num**2
