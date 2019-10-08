@@ -1,3 +1,36 @@
+var ProductModel = Backbone.Model.extend({
+  defaults: function () {
+    return {
+      name: "",
+      price: 0
+    }
+  }
+})
+
+var ProductsCollection = Backbone.Collection.extend({
+  model: ProductModel
+})
+
+var ProductView = Backbone.View.extend({
+  el: $('.products'),
+
+  events: {
+    'click .add-to-cart': function () {
+      alert("add cart buton clicked!")
+    }
+  }
+})
+
+var productsCollection = new ProductsCollection();
+productsCollection.add({
+  name: 'Cook Book',
+  price: 28
+})
+
+var productView = new ProductView();
+
+
+
 var viewCartButton = document.getElementsByClassName('view-cart')[0];
 var shoppingCart = document.getElementsByClassName('shopping-cart')[0];
 var products = document.getElementsByClassName('products')[0];
@@ -14,7 +47,6 @@ viewCartButton.addEventListener('click', function () {
 
 products.addEventListener('click', function (e) {
   if (e.target.classList.contains('add-to-cart')) {
-    debugger;
     var itemName = e.target.closest('.item').getAttribute('data-name');
 
     var itemPrice = e.target.closest('.item').getAttribute('data-price');

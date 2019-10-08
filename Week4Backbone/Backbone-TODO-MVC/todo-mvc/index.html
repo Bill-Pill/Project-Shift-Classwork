@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js • TodoMVC</title>
+  <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+</head>
+
+<body>
+  <section class="todoapp">
+    <header class="header">
+      <h1>todos</h1>
+      <input class="new-todo" placeholder="What needs to be done?" autofocus>
+    </header>
+
+    <section class="main">
+      <ul class="todo-list"></ul>
+    </section>
+
+    <footer class="footer">
+      <ul class="filters">
+        <li>
+          <a class="all selected" href="#">All</a>
+        </li>
+        <li>
+          <a class="active" href="#">Active</a>
+        </li>
+        <li>
+          <a class="completed" href="#">Completed</a>
+        </li>
+      </ul>
+    </footer>
+  </section>
+
+  <script type="text/template" id="item-template">
+      <div class="view">
+        <input class="toggle" type="checkbox" {{#if completed}} checked {{/if}}>
+        <label>{{ title }}</label>
+        <button class="destroy"></button>
+      </div>  
+    </script>
+
+  <!-- <script src="node_modules/todomvc-common/base.js"></script> -->
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="node_modules/underscore/underscore.js"></script>
+  <script src="node_modules/backbone/backbone.js"></script>
+  <script src="js/models/todo.js"></script>
+  <script src="js/collections/todos.js"></script>
+  <script src="js/views/todo-view.js"></script>
+  <script src="js/views/app-view.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
