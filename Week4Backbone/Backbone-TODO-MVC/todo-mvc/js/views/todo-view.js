@@ -13,6 +13,8 @@ TodoView = Backbone.View.extend({
   removeOnClick: function () {
     this.remove();
   },
+
+
   //... is a list tag.
   tagName: 'li',
 
