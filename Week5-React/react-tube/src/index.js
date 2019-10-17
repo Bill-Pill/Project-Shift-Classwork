@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
 import VideoDetail from './components/video_detail';
 import VideoList from './components/video_list';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import { onUpdate, forceUpdate, sendEvent } from './state';
 const API_KEY = 'AIzaSyAXguV_Fvs9UAdppg6a0DcS1XD2QZ_BVhk';
 const axios = require('axios');
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      videos: [],
-      selectedVideo: null
-    };
+  constructor(props) {
+    super(props);
 
   }
 
@@ -30,11 +27,10 @@ class App extends Component {
 
     axios.get(url, { params: params })
       .then(response => {
-        this.setState({
-          videos: response.data.items,
-          selectedVideo: response.data.items[0]
-        });
-        console.log(this.state.selectedVideo)
+        const newVideos = response.data.items;
+        const newSelectedVideo = response.data.items[0];
+        sendEvent('changeVideoList', newVideos)
+        sendEvent('changeSelectedVideo', newSelectedVideo)
       })
       .catch(error => {
         console.error(error);
@@ -45,11 +41,14 @@ class App extends Component {
     return (
       <div>
         <SearchBar onSearchTermChange={this.videoSearch} />
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.props.selectedVideo} />
+        <VideoList videos={this.props.videos} />
       </div>
     )
   }
 }
+onUpdate((state) => {
+  ReactDOM.render(<App />, document.getElementById('root'));
+})
 
-ReactDOM.render(<App />, document.getElementById('root'));
+forceUpdate();
