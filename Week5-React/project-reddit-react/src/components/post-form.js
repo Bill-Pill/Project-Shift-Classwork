@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Red}
 
 class PostForm extends Component {
   constructor () {
@@ -20,6 +21,7 @@ class PostForm extends Component {
     }
 
     this.props.addPost(post);
+    return <Redirect to='/contacts' />
   }
 
   render() {
