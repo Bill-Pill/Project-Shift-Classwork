@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" href="master.css" />
+</head>
+
+<body>
+  <div id="main-container">
+    <div class="container drop-shadow" id="keys">
+      <h3>Valid Keys:</h3>
+      <small>1) 88312679-04c9-4351-85ce-3ed75293b449</small>
+      <small>2) 1a5c45d3-8ce7-44da-9e78-02fb3c1a71b7</small>
+    </div>
+
+    <div class="container drop-shadow">
+      <h1>API KEY</h1>
+      <input id="apiKey" type="text" class="shadow" placeholder="Key" value="88312679-04c9-4351-85ce-3ed75293b449" />
+      <button id="submitApiKey">Submit Key</button>
+    </div>
+
+    <div class="container drop-shadow" id="stores">
+      <h2><strong>Stores</strong></h2>
+      <small>(Server response should go here)</small>
+      <div id="apiKeyResponse">
+        <ul id="apiKeyResponseData"></ul>
+        <!-- Response form server goes here -->
+      </div>
+    </div>
+
+    <!-- Login Section -->
+
+    <div class="container drop-shadow">
+      <h1>LOGIN</h1>
+      <small>pssss.. (username: <b>greenlion235</b>; password:
+        <b>waters</b>)</small>
+      <input id="username" placeholder="Username" class="shadow" value="yellowleopard753" /> <br />
+      <input id="password" type="password" class="shadow" placeholder="Password" value="jonjon" />
+      <button id="submitLoginInfo">Submit Login</button>
+      <p id="loginResponse" class="shadow"></p>
+    </div>
+
+    <!-- Auth Level Section -->
+
+    <div class="container drop-shadow" id="storeIssues"></div>
+  </div>
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
