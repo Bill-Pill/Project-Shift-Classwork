@@ -171,12 +171,12 @@ Book.find({
 
 //3. Find all the Fiction books, skip the first 2, and display only 3 of them
 
-// Book.find({
-//   genres: /^fiction$/i
-// }, (err, bookResults) => {
-//   if (err) throw err;
-//   else console.log('Find all fiction books - skips first 2 and displays 3', bookResults)
-// }).skip(2).limit(3)
+Book.find({
+  genres: 'Fiction'
+}, (err, bookResults) => {
+  if (err) throw err;
+  else console.log('Find all fiction books - skips first 2 and displays 3', bookResults)
+}).skip(2).limit(3)
 
 
 /*People

@@ -1,0 +1,14 @@
+{
+  "name": "mongoose-subs-pops",
+  "version": "1.0.0",
+  "description": "",
+  "main": "population.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BiLL",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.7.8"
+  }
+}
